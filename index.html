@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Professional website design and development for businesses, startups, restaurants, gyms, salons, real estate, clinics, hotels and personal brands.">
+<meta name="keywords" content="website design, professional website design, business website development, website design for small businesses, local business websites, affordable business websites, website redesign, professional web design services">
+<title>Elevate Web — Professional Website Design</title>
+<style>
+:root{
+  --bg:#0b0d10;--surface:#11151a;--surface2:#171c22;--text:#f5f7fa;
+  --muted:#aab2bd;--accent:#c9a86a;--line:rgba(255,255,255,.10);
+  --light:#f5f3ef;--dark:#151719;--radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:100;background:rgba(11,13,16,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.logo{font-size:1.25rem;font-weight:800;letter-spacing:-.04em}.logo span{color:var(--accent)}
+nav{display:flex;gap:25px;color:#c6ccd4;font-size:.9rem}
+nav a:hover{color:white}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;font-weight:700;font-size:.9rem;border:1px solid transparent;transition:.25s}
+.btn-primary{background:var(--accent);color:#111}.btn-primary:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn-outline{border-color:var(--line);color:white}.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.menu{display:none;background:none;border:0;color:white;font-size:1.5rem}
+.hero{padding:105px 0 90px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:65px;align-items:center}
+.eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;margin-bottom:18px}
+h1{font-size:clamp(3rem,6vw,5.2rem);line-height:.98;letter-spacing:-.065em;max-width:700px}
+.hero p{font-size:1.12rem;color:var(--muted);max-width:590px;margin:25px 0 32px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.mockup{background:linear-gradient(145deg,#1d232a,#0d1013);border:1px solid var(--line);border-radius:28px;padding:13px;box-shadow:0 30px 80px rgba(0,0,0,.45);transform:rotate(1deg)}
+.browser{background:#f2f1ed;border-radius:18px;overflow:hidden;color:#14171a}
+.browser-bar{height:35px;background:#dcdad4;display:flex;align-items:center;gap:6px;padding:0 13px}
+.dot{width:7px;height:7px;border-radius:50%;background:#999}
+.site-preview{padding:30px 26px 38px;min-height:390px}
+.preview-nav{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:.75rem}
+.preview-links{display:flex;gap:13px;font-size:.55rem;font-weight:600}
+.preview-hero{margin-top:60px;max-width:330px}.preview-hero small{font-size:.55rem;letter-spacing:.12em;color:#8b7040;font-weight:800}
+.preview-hero h3{font-size:2rem;line-height:1.02;margin:9px 0}
+.preview-hero p{font-size:.63rem;color:#676b70;margin:0 0 18px}
+.preview-card{height:85px;border-radius:14px;background:linear-gradient(135deg,#22282d,#656b6f);margin-top:30px}
+.trust{background:var(--light);color:var(--dark);padding:26px 0}
+.trust-row{display:flex;align-items:center;justify-content:space-between;gap:25px;flex-wrap:wrap}
+.trust strong{font-size:.95rem}.trust-items{display:flex;gap:25px;flex-wrap:wrap;color:#5e6266;font-size:.82rem}
+section{padding:100px 0}.section-head{max-width:720px;margin-bottom:45px}.section-head h2{font-size:clamp(2.1rem,4vw,3.4rem);line-height:1.05;letter-spacing:-.045em}.section-head p{color:var(--muted);margin-top:15px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:rgba(201,168,106,.45)}
+.number{color:var(--accent);font-size:.75rem;font-weight:800;letter-spacing:.12em}.card h3{margin:38px 0 9px;font-size:1.15rem}.card p{color:var(--muted);font-size:.92rem}
+.portfolio{background:#f5f3ef;color:#17191b}.portfolio .section-head p{color:#676b70}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px}.filter{border:1px solid #d7d3cb;background:white;border-radius:999px;padding:9px 14px;font-size:.78rem;cursor:pointer}.filter.active{background:#17191b;color:white;border-color:#17191b}
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project{background:white;border:1px solid #ddd8cf;border-radius:22px;overflow:hidden}.project-img{height:245px;background:linear-gradient(135deg,#171b20,#777d82);padding:22px;display:flex;align-items:end}.project-ui{background:rgba(255,255,255,.92);color:#17191b;width:78%;padding:20px;border-radius:13px;box-shadow:0 15px 30px #0003}.project-ui b{font-size:1.05rem}.project-ui small{display:block;color:#777;margin-top:4px}.project-body{padding:22px}.project-body h3{margin:4px 0}.project-body p{font-size:.87rem;color:#696d72;margin-bottom:14px}.project-body .btn{padding:9px 14px;font-size:.78rem}
+.why{background:var(--surface)}.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.why-item{padding:30px;border:1px solid var(--line);border-radius:20px}.why-item h3{margin-bottom:8px}.why-item p{color:var(--muted);font-size:.92rem}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.price{border:1px solid var(--line);border-radius:24px;padding:30px;background:var(--surface)}.price.featured{border-color:var(--accent);box-shadow:0 20px 50px #0003}.badge{display:inline-block;background:var(--accent);color:#111;border-radius:99px;padding:5px 9px;font-size:.65rem;font-weight:800;margin-bottom:12px}.price h3{font-size:1rem;letter-spacing:.08em}.price .amount{font-size:1.8rem;font-weight:800;margin:15px 0 20px}.price ul{list-style:none;margin-bottom:25px}.price li{padding:8px 0;color:var(--muted);font-size:.88rem;border-bottom:1px solid var(--line)}.price li::before{content:"✓";color:var(--accent);margin-right:8px}
+.process{background:var(--light);color:var(--dark)}.process .section-head p{color:#676b70}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{border-top:2px solid #d5d0c7;padding-top:18px}.step b{color:#8d7242}.step h3{margin:13px 0 6px}.step p{color:#676b70;font-size:.87rem}
+.faq{max-width:850px}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;background:none;border:0;color:white;text-align:left;padding:22px 0;font-size:1rem;font-weight:700;display:flex;justify-content:space-between;cursor:pointer}.faq-a{max-height:0;overflow:hidden;color:var(--muted);transition:max-height .3s ease}.faq-item.open .faq-a{max-height:150px;padding-bottom:20px}
+.contact{background:linear-gradient(135deg,#15191d,#0b0d10)}.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:start}.contact h2{font-size:clamp(2.4rem,5vw,4rem);line-height:1.02;letter-spacing:-.05em}.contact-copy p{color:var(--muted);margin:18px 0 25px}.phone{font-size:1.2rem;font-weight:800;color:var(--accent)}form{background:var(--surface);border:1px solid var(--line);padding:28px;border-radius:24px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:13px}.field.full{grid-column:1/-1}.field label{font-size:.75rem;color:#b8bec7}.field input,.field select,.field textarea{background:#0c0f12;border:1px solid var(--line);border-radius:10px;padding:12px;color:white;outline:none;font:inherit}.field textarea{min-height:110px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent)}
+footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}.footer-title{color:white;font-weight:800;margin-bottom:12px}.footer a{display:block;margin:7px 0;font-size:.86rem}.copyright{border-top:1px solid var(--line);margin-top:30px;padding-top:20px;font-size:.78rem}
+@media(max-width:900px){nav{display:none}.menu{display:block}.nav .btn{display:none}.hero-grid,.contact-grid{grid-template-columns:1fr}.cards,.pricing-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.hero{padding-top:75px}}
+@media(max-width:620px){section{padding:75px 0}.cards,.pricing-grid,.work-grid,.why-grid,.steps,.form-grid,.footer-grid{grid-template-columns:1fr}.hero h1{font-size:3rem}.trust-row{align-items:flex-start;flex-direction:column}.site-preview{min-height:330px}.contact-grid{gap:35px}.project-img{height:205px}}
+</style>
+</head>
+<body>
+<header>
+<div class="container nav">
+<a class="logo" href="#home">Elevate<span>Web</span></a>
+<nav>
+<a href="#home">Home</a><a href="#services">Services</a><a href="#work">Our Work</a><a href="#why">Why Us</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+</nav>
+<a class="btn btn-primary" href="#contact">Get a Free Quote</a>
+<button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+</div>
+</header>
+
+<main id="home">
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">Professional Website Design</div>
+<h1>Your Business Deserves a Website That Gets Noticed.</h1>
+<p>We design modern, professional websites that help businesses build credibility, attract customers, and grow online.</p>
+<div class="actions"><a class="btn btn-primary" href="#contact">Get a Free Quote</a><a class="btn btn-outline" href="#work">View Our Work</a></div>
+</div>
+<div class="mockup" aria-label="Website preview mockup">
+<div class="browser"><div class="browser-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+<div class="site-preview"><div class="preview-nav"><span>YOUR BRAND</span><div class="preview-links"><span>ABOUT</span><span>SERVICES</span><span>CONTACT</span></div></div>
+<div class="preview-hero"><small>WELCOME</small><h3>A stronger digital presence starts here.</h3><p>Clean design. Clear messaging. Built around your business.</p><span class="btn btn-primary" style="padding:8px 12px;font-size:.58rem">Get Started</span></div>
+<div class="preview-card"></div></div></div></div>
+</div>
+</section>
+
+<div class="trust"><div class="container trust-row"><strong>Built for businesses that want to stand out online.</strong><div class="trust-items"><span>Professional Design</span><span>Mobile Responsive</span><span>Fast & Modern</span><span>Business-Focused</span><span>Easy to Contact</span></div></div></div>
+
+<section id="services"><div class="container"><div class="section-head"><div class="eyebrow">Services</div><h2>Everything You Need to Build a Strong Online Presence</h2><p>From a focused landing page to a complete business website, each project is structured around your goals.</p></div>
+<div class="cards">
+<div class="card"><span class="number">01</span><h3>Business Websites</h3><p>Professional websites designed to showcase your business, services, and brand.</p></div>
+<div class="card"><span class="number">02</span><h3>Landing Pages</h3><p>High-converting landing pages designed around a clear business goal.</p></div>
+<div class="card"><span class="number">03</span><h3>Restaurant Websites</h3><p>Beautiful menus, location information, contact options, and reservation-focused layouts.</p></div>
+<div class="card"><span class="number">04</span><h3>E-Commerce Websites</h3><p>Modern online stores designed to showcase products and make purchasing simple.</p></div>
+<div class="card"><span class="number">05</span><h3>Portfolio Websites</h3><p>Professional websites for creators, freelancers, professionals, and personal brands.</p></div>
+<div class="card"><span class="number">06</span><h3>Website Redesign</h3><p>Transform an outdated website into a modern, professional digital experience.</p></div>
+</div></div></section>
+
+<section class="portfolio" id="work"><div class="container"><div class="section-head"><div class="eyebrow">Selected Concepts</div><h2>Websites That Make a Strong First Impression</h2><p>Explore sample design directions across industries. These are concept previews, not claims of completed client work.</p></div>
+<div class="filters"><button class="filter active" onclick="filterWork('all',this)">All</button><button class="filter" onclick="filterWork('business',this)">Business</button><button class="filter" onclick="filterWork('restaurant',this)">Restaurant</button><button class="filter" onclick="filterWork('fitness',this)">Fitness</button><button class="filter" onclick="filterWork('realestate',this)">Real Estate</button><button class="filter" onclick="filterWork('ecommerce',this)">E-Commerce</button><button class="filter" onclick="filterWork('portfolio',this)">Portfolio</button></div>
+<div class="work-grid">
+<div class="project" data-cat="business"><div class="project-img"><div class="project-ui"><b>Northline Business</b><small>Professional business concept</small></div></div><div class="project-body"><small>Business</small><h3>Clean & credible</h3><p>A structured business homepage focused on trust and enquiries.</p><a class="btn btn-outline" href="#contact">Request Similar</a></div></div>
+<div class="project" data-cat="restaurant"><div class="project-img"><div class="project-ui"><b>Maison Table</b><small>Restaurant concept</small></div></div><div class="project-body"><small>Restaurant</small><h3>Elegant dining experience</h3><p>A menu-led layout with strong location and contact visibility.</p><a class="btn btn-outline" href="#contact">Request Similar</a></div></div>
+<div class="project" data-cat="fitness"><div class="project-img"><div class="project-ui"><b>Forge Fitness</b><small>Fitness concept</small></div></div><div class="project-body"><small>Fitness</small><h3>Bold & focused</h3><p>A conversion-focused fitness layout built around enquiries and services.</p><a class="btn btn-outline" href="#contact">Request Similar</a></div></div>
+<div class="project" data-cat="realestate"><div class="project-img"><div class="project-ui"><b>Urban Estates</b><small>Real estate concept</small></div></div><div class="project-body"><small>Real Estate</small><h3>Premium property showcase</h3><p>A polished property-focused experience for a modern agency.</p><a class="btn btn-outline" href="#contact">Request Similar</a></div></div>
+<div class="project" data-cat="ecommerce"><div class="project-img"><div class="project-ui"><b>Atelier Goods</b><small>E-commerce concept</small></div></div><div class="project-body"><small>E-Commerce</small><h3>Simple shopping experience</h3><p>A clean storefront concept designed to keep products in focus.</p><a class="btn btn-outline" href="#contact">Request Similar</a></div></div>
+<div class="project" data-cat="portfolio"><div class="project-img"><div class="project-ui"><b>Alex Studio</b><small>Portfolio concept</small></div></div><div class="project-body"><small>Portfolio</small><h3>Personal brand presence</h3><p>A minimal portfolio concept for professionals and creators.</p><a class="btn btn-outline" href="#contact">Request Similar</a></div></div>
+</div></div></section>
+
+<section class="why" id="why"><div class="container"><div class="section-head"><div class="eyebrow">Why Us</div><h2>Why Businesses Choose a Professional Website</h2></div>
+<div class="why-grid">
+<div class="why-item"><h3>First Impressions Matter</h3><p>Your website is often the first interaction customers have with your business.</p></div>
+<div class="why-item"><h3>Designed for Your Business</h3><p>Every website is structured around your brand, services, customers, and goals.</p></div>
+<div class="why-item"><h3>Mobile Ready</h3><p>Your website should look great and work smoothly on phones, tablets, and desktops.</p></div>
+<div class="why-item"><h3>Built to Convert</h3><p>Clear messaging and calls-to-action help visitors take the next step.</p></div>
+</div></div></section>
+
+<section id="pricing"><div class="container"><div class="section-head"><div class="eyebrow">Pricing</div><h2>Simple Website Packages</h2><p>Every business has different requirements, so final pricing is provided through a custom quote.</p></div>
+<div class="pricing-grid">
+<div class="price"><h3>STARTER</h3><div class="amount">Custom Quote</div><ul><li>Professional website</li><li>Responsive design</li><li>Essential business sections</li><li>Contact form</li><li>Basic SEO setup</li></ul><a class="btn btn-outline" href="#contact">Get Started</a></div>
+<div class="price featured"><span class="badge">MOST POPULAR</span><h3>BUSINESS</h3><div class="amount">Custom Quote</div><ul><li>Everything in Starter</li><li>More pages</li><li>Custom sections</li><li>Enhanced design</li><li>Lead-focused layout</li><li>SEO-friendly structure</li></ul><a class="btn btn-primary" href="#contact">Get Started</a></div>
+<div class="price"><h3>PREMIUM</h3><div class="amount">Custom Quote</div><ul><li>Everything in Business</li><li>Advanced functionality</li><li>Premium design</li><li>Custom integrations</li><li>E-commerce or advanced features where required</li></ul><a class="btn btn-outline" href="#contact">Request a Quote</a></div>
+</div></div></section>
+
+<section class="process"><div class="container"><div class="section-head"><div class="eyebrow">Process</div><h2>How It Works</h2></div>
+<div class="steps"><div class="step"><b>01</b><h3>Tell Us About Your Business</h3><p>Share your business details, goals, and requirements.</p></div><div class="step"><b>02</b><h3>We Plan Your Website</h3><p>We create the structure, content direction, and visual approach.</p></div><div class="step"><b>03</b><h3>Design & Development</h3><p>Your website is designed and developed around your business.</p></div><div class="step"><b>04</b><h3>Launch</h3><p>After final approval, your website is ready to go live.</p></div></div></div></section>
+
+<section id="faq"><div class="container faq"><div class="section-head"><div class="eyebrow">FAQ</div><h2>Questions, answered.</h2></div>
+<div class="faq-item"><button class="faq-q">How long does a website take?<span>+</span></button><div class="faq-a">Timelines depend on the size and requirements of the project. A clear estimate is provided before work begins.</div></div>
+<div class="faq-item"><button class="faq-q">Can you design a website for my type of business?<span>+</span></button><div class="faq-a">Yes. We work around your business type, audience, services, brand, and goals.</div></div>
+<div class="faq-item"><button class="faq-q">Will my website work on mobile phones?<span>+</span></button><div class="faq-a">Yes. Websites are designed to be responsive across phones, tablets, and desktop screens.</div></div>
+<div class="faq-item"><button class="faq-q">Can I request changes?<span>+</span></button><div class="faq-a">Yes. Project revisions can be discussed and included according to the agreed scope.</div></div>
+<div class="faq-item"><button class="faq-q">Do you provide website maintenance?<span>+</span></button><div class="faq-a">Maintenance and ongoing support can be discussed based on your website's needs.</div></div>
+<div class="faq-item"><button class="faq-q">How do I get started?<span>+</span></button><div class="faq-a">Call 9608626107 or send your requirements through the quote form below.</div></div>
+</div></section>
+
+<section class="contact" id="contact"><div class="container contact-grid"><div class="contact-copy"><div class="eyebrow">Let's Talk</div><h2>Ready to Build Your Online Presence?</h2><p>Tell us about your business and what you need. We'll get back to you with the next steps.</p><a class="phone" href="tel:9608626107">9608626107</a><div class="actions" style="margin-top:24px"><a class="btn btn-primary" href="tel:9608626107">Call Now</a></div></div>
+<form onsubmit="submitForm(event)"><div class="form-grid"><div class="field"><label>Name</label><input required name="name" placeholder="Your name"></div><div class="field"><label>Business Name</label><input required name="business" placeholder="Business name"></div><div class="field"><label>Phone Number</label><input required name="phone" type="tel" placeholder="Phone number"></div><div class="field"><label>Email</label><input required name="email" type="email" placeholder="Email address"></div><div class="field full"><label>Business Type</label><select required name="type"><option value="">Select business type</option><option>Local Business</option><option>Restaurant / Café</option><option>Gym / Fitness</option><option>Salon / Beauty</option><option>Real Estate</option><option>Clinic</option><option>Hotel</option><option>Startup / Small Business</option><option>Personal Brand / Professional</option><option>Other</option></select></div><div class="field full"><label>What kind of website do you need?</label><select required name="website"><option value="">Select a service</option><option>Business Website</option><option>Landing Page</option><option>Restaurant Website</option><option>E-Commerce Website</option><option>Portfolio Website</option><option>Website Redesign</option><option>Not Sure Yet</option></select></div><div class="field full"><label>Message</label><textarea name="message" placeholder="Tell us about your project..."></textarea></div></div><button class="btn btn-primary" type="submit" style="width:100%">Get a Free Quote</button><p id="formMessage" style="display:none;color:var(--accent);margin-top:13px;font-size:.85rem">Thanks! Your enquiry is ready to send. Please call 9608626107 to discuss your project.</p></form>
+</div></section>
+</main>
+
+<footer><div class="container"><div class="footer-grid"><div><div class="logo">Elevate<span>Web</span></div><p style="margin-top:12px;font-size:.86rem;max-width:320px">Professional website design for businesses that want to build credibility, attract customers, and grow online.</p></div><div><div class="footer-title">Quick Links</div><a href="#services">Services</a><a href="#work">Our Work</a><a href="#why">Why Us</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div><div><div class="footer-title">Contact</div><a href="tel:9608626107">9608626107</a><a href="#contact">Get a Free Quote</a></div></div><div class="copyright">© 2026 All Rights Reserved.</div></div></footer>
+
+<script>
+function toggleMenu(){
+ const nav=document.querySelector('nav');
+ nav.style.display=nav.style.display==='flex'?'none':'flex';
+ nav.style.position='absolute';nav.style.top='76px';nav.style.left='0';nav.style.right='0';
+ nav.style.background='#0b0d10';nav.style.padding='20px 4%';nav.style.flexDirection='column';
+}
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{
+ const item=q.parentElement; item.classList.toggle('open'); q.querySelector('span').textContent=item.classList.contains('open')?'−':'+';
+}));
+function filterWork(cat,btn){
+ document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
+ document.querySelectorAll('.project').forEach(p=>p.style.display=(cat==='all'||p.dataset.cat===cat)?'block':'none');
+}
+function submitForm(e){
+ e.preventDefault();
+ document.getElementById('formMessage').style.display='block';
+ e.target.reset();
+}
+</script>
+</body>
+</html>
